@@ -113,7 +113,8 @@ class Game {
         button.disabled = true; //Disable the selected letter’s onscreen keyboard button.
         if(!this.activePhrase.checkLetter(button.textContent)){
             button.classList.add('wrong');
-            this.removeLife();      
+            this.removeLife();    
+             
         } else {
            this.activePhrase.showMatchedLetter(button.textContent);
             button.classList.add('chosen');
