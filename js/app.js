@@ -28,17 +28,3 @@ startBtn.addEventListener('click', () => {
         //console.log(e.target)
     }
 })
-
-
-document.addEventListener('keyup', (e)=> {
-   const keys = document.querySelectorAll('.key');
-   const keyDown = e.key;
-
-    keys.forEach( key => {
-     
-        if( key.textContent === keyDown && key.disabled===false){
-            game.handleInteraction(key)
-            console.log('test ok')
-        }
-    })
-})
