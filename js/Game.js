@@ -113,8 +113,7 @@ class Game {
         button.disabled = true; //Disable the selected letter’s onscreen keyboard button.
         if(!this.activePhrase.checkLetter(button.textContent)){
             button.classList.add('wrong');
-            this.removeLife();    
-             
+            this.removeLife();      
         } else {
            this.activePhrase.showMatchedLetter(button.textContent);
             button.classList.add('chosen');
@@ -132,25 +131,27 @@ class Game {
  *             Reset all of the heart images 
  */
 
-    resetGame() {
-        const phrase = document.querySelectorAll('#phrase ul li');
-        const qwerty = document.querySelectorAll('.key');
-        const heartsRestore = document.querySelectorAll(".tries")
+ resetGame() {
+    const phrase = document.querySelectorAll('#phrase ul li');
+    const qwerty = document.querySelectorAll('.key');
+    const heartsRestore = document.querySelectorAll(".tries")
+   
+    phrase.forEach(li => 
+            li.remove());
     
-        phrase.forEach(li => 
-                li.remove());
-        
-        qwerty.forEach(character => {
-                character.classList.remove('wrong');
-                character.classList.remove('chosen');
-                character.classList.add('key');
-                character.disabled = false; 
-        });
+    qwerty.forEach(character => {
+            character.classList.remove('wrong');
+            character.classList.remove('chosen');
+            character.classList.add('key');
+            character.disabled = false; 
+    })
 
-        heartsRestore.forEach(liveHeart => {
-            liveHeart.firstElementChild.src = 'images/liveHeart.png';
-        })   
-        
-    }  
-        
+    heartsRestore.forEach(liveHeart => {
+        liveHeart.firstElementChild.src = 'images/liveHeart.png';
+    })   
+    
+}  
+    
+
+
 }

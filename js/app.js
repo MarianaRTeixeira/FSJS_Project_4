@@ -29,10 +29,8 @@ startBtn.addEventListener('click', () => {
     }
 })
 
-/**
- * Extra - credit : add a keyboard event
- */
-document.addEventListener('keyup', (e) => {
+
+document.addEventListener('keyup', (e)=> {
    const keys = document.querySelectorAll('.key');
    const keyDown = e.key;
 
